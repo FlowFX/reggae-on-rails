@@ -5,3 +5,5 @@ using Ruby on Rails instead of Python and Django. The reason for this can be fou
 [here](https://flowfx.de/blog/moving-back-to-germany/).
 
 The current status is very much **under development**.
+
+Dev site is at [https://reggae-cdmx.herokuapp.com](https://reggae-cdmx.herokuapp.com).
