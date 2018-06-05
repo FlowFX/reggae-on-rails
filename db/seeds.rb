@@ -1,7 +1,34 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Event.delete_all
+Event.create!(
+  title: 'Happy Salsa Dance Party',
+  description: %{
+    <p>Normally, both your asses would be dead as fucking fried chicken, but
+    you happen to pull this shit while I'm in a transitional period so I don't
+    wanna kill you, I wanna help you. But I can't give you this case, it don't
+    belong to me. Besides, I've already been through too much shit this morning
+    over this case to hand it over to your dumb ass.</p>
+  },
+  date: Time.utc(2018, 9, 1)
+)
+Event.create!(
+  title: 'FlowFX Birthday Bash',
+  description: %{
+    <p>Well, the way they make shows is, they make one show. That show's called
+    a pilot. Then they show that show to the people who make shows, and on the
+    strength of that one show they decide if they're going to make more shows.
+    Some pilots get picked and become television programs. Some don't, become
+    nothing. She starred in one of the ones that became nothing.</p>
+  },
+  date: Time.utc(2018, 9, 1)
+)
+Event.create!(
+  title: 'New Years Eve Reggae Jam',
+  description: %{
+    <p>Look, just because I don't be givin' no man a foot massage don't make it
+    right for Marsellus to throw Antwone into a glass motherfuckin' house,
+    fuckin' up the way the nigger talks. Motherfucker do that shit to me, he
+    better paralyze my ass, 'cause I'll kill the motherfucker, know what I'm
+    sayin'?</p>
+  },
+  date: Time.utc(2018, 12, 31)
+)
