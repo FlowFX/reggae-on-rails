@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<h1>Eventos</h1>
 
 <table>
   <% @events.each do |event| %>
     <tr>
       <td><%= event.date %></td>
       <td><%= link_to event.title, event %></td>
-      <td><%= link_to 'Edit', edit_event_path(event) %></td>
-      <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Editar', edit_event_path(event) %></td>
+      <td><%= link_to 'Borrar', event, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
     </tr>
   <% end %>
 </table>
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
+<%= link_to 'Nuevo evento', new_event_path %>
