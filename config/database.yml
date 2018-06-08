@@ -22,4 +22,6 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: reggae_on_rails_production
+  username: reggae_on_rails
+  password: <%= ENV['REGGAE_ON_RAILS_DATABASE_PASSWORD'] %>
