@@ -15,3 +15,13 @@ The Reader goes to https://reggae-cdmx.com/ looking for a cool Reggae event this
 ### Staff
 A staff member adds, edits and deletes events. When she clicks the **Add Event** button, she gets presented a web form with input fields for all the information that will be shown on the event detail page (cf. Readers). She can also add and edit the venues that are associated with events.
 
+## Installation
+
+```bash
+git clone git@github.com:FlowFX/reggae-on-rails.git reggae-on-rails
+cd reggae-on-rails
+bundle install
+rails db:migrate
+rails db:seed
+rails test
+```
