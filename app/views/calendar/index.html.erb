@@ -1,16 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Eventos</h1>
-
 <p>
-  Automatically deployed on Heroku via push to GitHub.
+Automatically deployed on Heroku via push to GitHub.
 </p>
 
 <table>
-  <% @events.each do |event| %>
-    <tr>
-      <td><%= event.date %></td>
-      <td><%= link_to event.title, event %></td>
-    </tr>
+  <% cache @events do %>
+    <% @events.each do |event| %>
+      <% cache @event do %>
+        <tr>
+          <td><%= event.date %></td>
+          <td><%= link_to event.title, event %></td>
+        </tr>
+      <% end %>
+    <% end %>
   <% end %>
 </table>
