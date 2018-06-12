@@ -32,3 +32,14 @@ Event.create!(
   },
   date: Time.utc(2018, 12, 31)
 )
+
+Venue.delete_all
+Venue.create!(
+  name: 'Kalyman Bar',
+  address: 'Av. Guadalupe I. Ramírez 263, Amp San Marcos Nte, 16038 Ciudad de México',
+  link_url: 'https://es-la.facebook.com/KALYMAN-BAR-214050825308436/'
+)
+Venue.create!(
+  name: 'Cultural Roots',
+  address: 'Calle de Tacuba 64, Centro, 06000 Cuauhtemoc'
+)
