@@ -6,13 +6,6 @@ Automatically deployed on Heroku via push to GitHub.
 
 <table>
   <% cache @events do %>
-    <% @events.each do |event| %>
-      <% cache @event do %>
-        <tr>
-          <td><%= event.date %></td>
-          <td><%= link_to event.title, event %></td>
-        </tr>
-      <% end %>
-    <% end %>
+    <%= render(@events) %>
   <% end %>
 </table>
