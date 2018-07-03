@@ -6,5 +6,4 @@ class CalendarControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select 'td', 'Jahshua Soundman Birthday Bash'
   end
-
 end
