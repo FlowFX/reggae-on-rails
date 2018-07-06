@@ -3,6 +3,7 @@ require 'test_helper'
 class EventsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @event = events(:one)
+    @venue = venues(:tacuba)
   end
 
   test "should get index" do
@@ -15,9 +16,37 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create event" do
+  test "should create event with venue" do
     assert_difference('Event.count') do
-      post events_url, params: { event: { date: @event.date, description: @event.description, image_url: @event.image_url, link_url: @event.link_url, title: @event.title } }
+      post events_url,
+        params: {
+          event: {
+            date: @event.date,
+            description: @event.description,
+            image_url: @event.image_url,
+            link_url: @event.link_url,
+            title: @event.title,
+            venue: @venue
+          }
+        }
+    end
+
+    assert_redirected_to event_url(Event.last)
+  end
+
+  test "should create event without venue" do
+    assert_difference('Event.count') do
+      post events_url,
+        params: {
+          event: {
+            date: @event.date,
+            description: @event.description,
+            image_url: @event.image_url,
+            link_url: @event.link_url,
+            title: @event.title,
+            venue: nil
+          }
+        }
     end
 
     assert_redirected_to event_url(Event.last)
@@ -34,7 +63,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update event" do
-    patch event_url(@event), params: { event: { date: @event.date, description: @event.description, image_url: @event.image_url, link_url: @event.link_url, title: @event.title } }
+    patch event_url(@event), params: { event: { date: @event.date, description: @event.description, image_url: @event.image_url, link_url: @event.link_url, title: @event.title, venue: @venue } }
     assert_redirected_to event_url(@event)
   end
 

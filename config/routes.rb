@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :venues
+  resources :users
   root 'calendar#index', as: 'calendar_index'
-
   resources :events
+  resources :venues
 end

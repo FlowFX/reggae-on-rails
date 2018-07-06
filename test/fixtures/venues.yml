@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  address: MyString
-  link_url: MyString
+tacuba:
+  name: 'Tacuba 64'
+  address: 'Calle Tacuba 64, Centro Histórico'
+  link_url: 'https://www.tacuba64.mx/'
 
-two:
-  name: MyString
-  address: MyString
-  link_url: MyString
+kalyman:
+  name: 'Kalyman Bar'
+  address: 'Xochimilco'
+  link_url: 'https://www.kalyman-bar.mx/'

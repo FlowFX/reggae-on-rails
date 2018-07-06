@@ -1,0 +1,18 @@
+// BASE COLORS
+body {
+  background: black;
+  color: white;
+}
+
+a {
+  color: yellow;
+
+  &:hover {
+    color: orange;
+    background-color: lightblue;
+  }
+
+  &:visited {
+    color: lightgreen;
+  }
+}

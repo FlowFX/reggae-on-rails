@@ -10,7 +10,17 @@
 
   <body class="<%= controller.controller_name %>">
 
-    <h1>Reggae CDMX</h1>
+    <h1><%= link_to 'Reggae CDMX', calendar_index_path %></h1>
+
+    <ul>
+      <li><%= button_to 'todos eventos', events_path, method: :get %></li>
+      <li><%= button_to 'todos localidades', venues_path, method: :get %></li>
+    </ul>
+
+    <ul>
+      <li><%= button_to 'nuevo evento', new_event_path, method: :get %></li>
+      <li><%= button_to 'nuevo localidad', new_venue_path, method: :get %></li>
+    </ul>
 
     <div class="content">
       <%= yield %>
