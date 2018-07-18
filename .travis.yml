@@ -1,5 +1,7 @@
 language: ruby
+cache: bundler
 rvm:
   - 2.5
 notifications:
   email: never
+bundler_args: --without production
