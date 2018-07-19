@@ -1,2 +1,6 @@
 @import 'kickstart_rails';
 @import 'calendar.scss';
+
+.wrapper{
+  @include wrapper();
+}
