@@ -14,5 +14,5 @@ if ENV['CI']
 end
 
 class ActiveSupport::TestCase
-  fixtures :all
+  include FactoryBot::Syntax::Methods
 end

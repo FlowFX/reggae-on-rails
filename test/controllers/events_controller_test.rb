@@ -4,12 +4,12 @@ require 'test_helper'
 
 class EventsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @event = events(:one)
+    @event = create(:event)
     @event_params = {
       event: {
         title: @event.title,
         date: @event.date,
-        description: nil
+        description: @event.description
       }
     }
   end
