@@ -33,10 +33,19 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'event requires title' do
+    # GIVEN incomplete event parameters
     @event_params[:event][:title] = nil
 
+    # WHEN creating a new event
+    # THEN nothing happens
     assert_difference('Event.count', 0) do
       post events_url, params: @event_params
+    end
+
+    # WHEN updating an event
+    # THEN nothing happens
+    assert_difference('Event.count', 0) do
+      patch event_url(@event), params: @event_params
     end
   end
 
