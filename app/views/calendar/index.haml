@@ -1,3 +1,12 @@
 :markdown
   # Reggae CDMX
   Code repository at [https://github.com/flowfx/reggae-on-rails](https://github.com/flowfx/reggae-on-rails).
+
+%table
+  %tbody
+    - @events.each do |event|
+      %tr
+        %td= event.date
+        %td= link_to event.title, event
+        %td= link_to 'Edit', edit_event_path(event)
+        %td= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
