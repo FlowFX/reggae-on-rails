@@ -12,3 +12,7 @@ form {
 .group {
   @include form_group();
 }
+
+.table.table-blank {
+  @include table($blank: true);
+}
