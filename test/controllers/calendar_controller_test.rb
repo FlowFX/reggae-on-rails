@@ -4,8 +4,8 @@ require 'test_helper'
 
 class CalendarControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @tomorrow = create(:event, title: "Tomorrow's party", date: Date.tomorrow)
-    @today = create(:event, title: "Today's party", date: Time.zone.today)
+    create_list(:event, 3, :future)
+    create_list(:event, 2, :past)
   end
 
   test 'should get index' do
@@ -20,8 +20,11 @@ class CalendarControllerTest < ActionDispatch::IntegrationTest
 
   test 'events are shown in ascending temporal order' do
     get root_url
+    assert assigns(:events).first.date < assigns(:events).last.date
+  end
 
-    assert_equal assigns(:events)[0], @today
-    assert_equal assigns(:events)[1], @tomorrow
+  test 'only future events are shown' do
+    get root_url
+    assert assigns(:events).first.date >= Time.zone.today
   end
 end
