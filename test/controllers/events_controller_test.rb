@@ -12,10 +12,8 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
         description: @event.description
       }
     }
-    @tomorrow = create(:event, title: "Tomorrow's party", date: Date.tomorrow)
-    @yesterday = create(:event,
-                        title: "Today's party",
-                        date: Time.zone.yesterday)
+    create(:event, :future)
+    create(:event, :past)
   end
 
   test 'should get index' do
@@ -32,6 +30,12 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     get events_url
 
     assert assigns(:events).first.date > assigns(:events).last.date
+  end
+
+  test 'index shows all events ever' do
+    get events_url
+
+    assert_equal assigns(:events).length, Event.all.count
   end
 
   test 'should get new' do
