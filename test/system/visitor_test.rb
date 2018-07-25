@@ -4,7 +4,8 @@ require 'application_system_test_case'
 
 class VisitorTest < ApplicationSystemTestCase
   setup do
-    @events = create_list(:event, 3)
+    @events = create_list(:event, 3, :future)
+    create_list(:event, 2, :past)
   end
 
   test 'Maria wants to look up what is happening in the city tonight' do
@@ -13,6 +14,9 @@ class VisitorTest < ApplicationSystemTestCase
 
     # She sees the title of the calendar
     assert_selector 'h1', text: 'Reggae CDMX'
+
+    # and all future events
+    assert page.find_all('tr', count: @events.count)
 
     # and also the title of tonight's event.
     assert page.has_content?(@events.first.title)
