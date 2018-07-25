@@ -1,6 +1,14 @@
 @import 'kickstart_rails';
 @import 'calendar.scss';
 
-.wrapper{
+.wrapper {
   @include wrapper();
+}
+
+form {
+  @include form();
+}
+
+.group {
+  @include form_group();
 }
