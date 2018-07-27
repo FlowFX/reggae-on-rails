@@ -5,6 +5,12 @@
   @include wrapper();
 }
 
+.container.container-footer {
+  @include container();
+  background-color: #ddd;
+  font-size: small;
+}
+
 form {
   @include form();
 }
