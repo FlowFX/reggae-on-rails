@@ -1,16 +1,38 @@
 @import 'kickstart_rails';
 @import 'calendar.scss';
 
+// Sticky Footer
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+
+// Wrapper
 .wrapper {
   @include wrapper();
 }
 
+// Footer
 .container.container-footer {
   @include container();
   background-color: #ddd;
   font-size: small;
+  margin-bottom: 10px;
 }
 
+// Forms
 form {
   @include form();
 }
@@ -19,6 +41,7 @@ form {
   @include form_group();
 }
 
+// Tables
 .table.table-blank {
   @include table($blank: true);
 }
