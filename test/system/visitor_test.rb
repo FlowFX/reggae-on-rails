@@ -12,8 +12,12 @@ class VisitorTest < ApplicationSystemTestCase
     # Maria visits the home page of Reggae CDMX.
     visit '/'
 
-    # She sees the title of the calendar
+    # She sees the title of the calendar,
     assert_selector 'h1', text: 'Reggae CDMX'
+
+    # and the informative footer,
+    assert page.has_content?('Jahshua')
+    assert page.has_content?('FlowFX')
 
     # and all future events
     assert page.find_all('tr', count: @events.count)
