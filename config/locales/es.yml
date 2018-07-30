@@ -1,1 +1,18 @@
 es:
+  save: Guardar
+  edit: Editar
+  back: Atrás
+  show: Ver
+  destroy: Borrar
+  sure?: "¿Estás seguro?"
+  new_event: "Nuevo evento"
+  activerecord:
+    models:
+      event:
+        one: Evento
+        other: Eventos
+    attributes:
+      event:
+        title: Título
+        date: Dato
+        description: Descripción

@@ -7,10 +7,10 @@
         %td= event.title
         %td= event.date
         %td= event.description
-        %td= link_to 'Show', event
-        %td= link_to 'Edit', edit_event_path(event)
-        %td= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to t(:show), event
+        %td= link_to t(:edit), edit_event_path(event)
+        %td= link_to t(:destroy), event, method: :delete, data: { confirm: t(:sure?) }
 
 %br
 
-= link_to 'New Event', new_event_path
+= link_to t('new_event'), new_event_path
