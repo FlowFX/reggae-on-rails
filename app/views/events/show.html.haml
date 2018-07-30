@@ -1,15 +1,18 @@
 %p#notice= notice
 
 %p
-  %b Title:
+  %b
+    = t('activerecord.attributes.event.title')
   = @event.title
 %p
-  %b Date:
+  %b
+    = t('activerecord.attributes.event.date')
   = @event.date
 %p
-  %b Description:
+  %b
+    = t('activerecord.attributes.event.description')
   = @event.description
 
-= link_to 'Edit', edit_event_path(@event)
+= link_to t(:edit), edit_event_path(@event)
 \|
-= link_to 'Back', events_path
+= link_to t(:back), events_path
