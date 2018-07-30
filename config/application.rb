@@ -22,7 +22,7 @@ module ReggaeOnRails
     # the framework and any gems in your application.
 
     # Configure i18n
-    config.i18n.available_locales = %i[en es]
-    config.i18n.default_locale = :es
+    config.i18n.available_locales = [:en, :es, 'es-MX']
+    config.i18n.default_locale = 'es-MX'
   end
 end
