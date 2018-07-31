@@ -74,3 +74,7 @@ group :test do
   # Upload coverage report to codecov.io
   gem 'codecov'
 end
+
+group :production do
+  gem "google-cloud-storage", "~> 1.8", require: false
+end
