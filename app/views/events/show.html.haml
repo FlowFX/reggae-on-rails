@@ -9,6 +9,8 @@
     = t('activerecord.attributes.event.date')
   = l(@event.date)
 %p
+  = image_tag(@event.flyer_image)
+%p
   %b
     = t('activerecord.attributes.event.description')
   = @event.description
