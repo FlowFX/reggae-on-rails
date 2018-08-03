@@ -13,10 +13,10 @@
     = f.label :date
     = f.date_select :date
   .group
-    = f.label :flyer_image
+    = f.label :flyer_image, t('flyer')
     = f.file_field :flyer_image
   .group
     = f.label :description
-    = f.text_field :description
+    = f.text_area :description, rows: 8
   .actions
     = f.submit t(:save)
