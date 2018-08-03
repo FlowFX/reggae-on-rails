@@ -48,4 +48,8 @@ form {
 // Tables
 .table.table-blank {
   @include table($blank: true);
+
+  thead th {
+    border-color: transparent;
+  }
 }
