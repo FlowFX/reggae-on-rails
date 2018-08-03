@@ -10,7 +10,7 @@
   = l(@event.date)
 - if @event.flyer_image.attached?
   %p
-    = image_tag(@event.flyer_image)
+    = image_tag(@event.flyer_image.variant(resize: '400x400'))
 %p
   %b
     = t('activerecord.attributes.event.description')
