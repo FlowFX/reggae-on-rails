@@ -30,11 +30,11 @@ class VisitorTest < ApplicationSystemTestCase
 
     # There she sees the event's title, date and description.
     assert page.has_content?(@events.first.title)
-    assert page.has_content?(@events.first.date)
+    assert page.has_content?(@events.first.date.strftime('%d/%m/%Y'))
     assert page.has_content?(@events.first.description)
 
     # Happily, she returns to the main calendar to
     # look for more events in the future.
-    # TODO: finish test
+    click_on('Calendario')
   end
 end
