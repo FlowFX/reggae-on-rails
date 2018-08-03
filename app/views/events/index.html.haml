@@ -1,16 +1,22 @@
 %h1 Listing events
 
 %table.table.table-blank
+  %thead
+    %tr
+      %th= t('.date')
+      %th= t(:title)
+      %th= t(:flyer)
+      %th
+      %th
   %tbody
     - @events.each do |event|
       %tr
-        %td= event.title
         %td= l(event.date)
-        %td= event.description
-        %td= link_to t(:show), event
+        %td= link_to event.title, event
+        %td
+          - if event.flyer_image.attached?
+            X
         %td= link_to t(:edit), edit_event_path(event)
         %td= link_to t(:destroy), event, method: :delete, data: { confirm: t(:sure?) }
-
-%br
 
 = link_to t('new_event'), new_event_path
