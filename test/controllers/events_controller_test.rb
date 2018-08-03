@@ -76,11 +76,21 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  ### SHOW ###
   test 'should show event' do
     get event_url(@event)
     assert_response :success
   end
 
+  test 'should provide all correct template variables' do
+    get event_url(@event)
+
+    assert_equal assigns(:event).title,       @event.title
+    assert_equal assigns(:event).date,        @event.date
+    assert_equal assigns(:event).description, @event.description
+  end
+
+  ### UPDATE ###
   test 'should get edit' do
     get edit_event_url(@event)
     assert_response :success
