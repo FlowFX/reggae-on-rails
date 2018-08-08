@@ -24,9 +24,5 @@ module ReggaeOnRails
     # Configure i18n
     config.i18n.available_locales = [:en, 'es-MX']
     config.i18n.default_locale = 'es-MX'
-
-    config.public_file_server.headers = {
-      'Cache-Control' => 'public, max-age=31536000'
-    }
   end
 end
