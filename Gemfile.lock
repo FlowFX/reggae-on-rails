@@ -266,6 +266,8 @@ GEM
       declarative-option (< 0.2.0)
       uber (< 0.2.0)
     retriable (3.1.2)
+    rollbar (2.16.4)
+      multi_json
     rubocop (0.58.2)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -361,6 +363,7 @@ DEPENDENCIES
   rails-controller-testing
   rails-i18n (~> 5.1)
   redcarpet
+  rollbar
   rubocop
   sass (~> 3.4)
   selenium-webdriver
