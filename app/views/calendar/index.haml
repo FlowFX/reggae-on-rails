@@ -3,8 +3,9 @@
 %table.table.table-blank
   %tbody
     - @events.each do |event|
-      %tr
-        %td= l(event.date)
-        %td= link_to event.title, event
-        %td= link_to t(:edit), edit_event_path(event)
-        %td= link_to t(:destroy), event, method: :delete, data: { confirm: t(:sure?) }
+      - cache event do
+        %tr
+          %td= l(event.date)
+          %td= link_to event.title, event
+          %td= link_to t(:edit), edit_event_path(event)
+          %td= link_to t(:destroy), event, method: :delete, data: { confirm: t(:sure?) }
