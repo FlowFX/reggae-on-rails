@@ -76,5 +76,6 @@ group :test do
 end
 
 group :production do
+  gem "aws-sdk-s3", require: false
   gem "google-cloud-storage", "~> 1.8", require: false
 end
