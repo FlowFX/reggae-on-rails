@@ -1,27 +1,23 @@
 # frozen_string_literal: true
 
-FactoryBot.define do
-  sequence :event_title do |n|
-    "Event #{n}"
-  end
-end
+require 'faker'
 
 FactoryBot.define do
   factory :event do
-    title { generate(:event_title) }
-    date Date.tomorrow
-    description 'A wicked party.'
+    title       Faker::Lorem.sentence
+    date        Date.tomorrow
+    description Faker::Lorem.paragraphs
 
     trait :today do
       date { Time.zone.today }
     end
 
     trait :future do
-      date { Time.zone.today + rand(1..90).days }
+      date { Faker::Date.forward(90) }
     end
 
     trait :past do
-      date { Time.zone.today - rand(1..90).days }
+      date { Faker::Date.backward(90) }
     end
   end
 end
