@@ -7,6 +7,4 @@
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/FlowFX/reggae-on-rails.svg?columns=Inbox,To%20Do,In%20Progress)](https://waffle.io/FlowFX/reggae-on-rails)
 
 
-This is the Rails app powering [https://reggae-cdmx.com](https://reggae-cdmx.com).
-
-Made by Jahshua and FlowFX.
+This is the Rails app powering [https://reggae-cdmx.com](https://reggae-cdmx.com) (currently at https://reggae-on-rails.herokuapp.com/), made by Jahshua and [FlowFX](https://flowfx.de/about/).
