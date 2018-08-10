@@ -65,6 +65,7 @@ GEM
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.0)
     aws-sigv4 (1.0.3)
+    bcrypt (3.1.12)
     bindex (0.5.0)
     bootsnap (1.3.1)
       msgpack (~> 1.0)
@@ -91,6 +92,12 @@ GEM
     crass (1.0.4)
     declarative (0.0.10)
     declarative-option (0.1.0)
+    devise (4.4.3)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 6.0)
+      responders
+      warden (~> 1.2.3)
     digest-crc (0.4.1)
     docile (1.3.1)
     erubi (1.7.1)
@@ -212,6 +219,7 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    orm_adapter (0.5.0)
     os (0.9.6)
     parallel (1.12.1)
     parser (2.5.1.2)
@@ -267,6 +275,9 @@ GEM
       declarative (< 0.1.0)
       declarative-option (< 0.2.0)
       uber (< 0.2.0)
+    responders (2.4.0)
+      actionpack (>= 4.2.0, < 5.3)
+      railties (>= 4.2.0, < 5.3)
     retriable (3.1.2)
     rollbar (2.16.4)
       multi_json
@@ -329,6 +340,8 @@ GEM
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.4.0)
     url (0.3.2)
+    warden (1.2.7)
+      rack (>= 1.0)
     web-console (3.6.2)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -350,6 +363,7 @@ DEPENDENCIES
   capybara (>= 2.15, < 4.0)
   chromedriver-helper
   codecov
+  devise
   factory_bot_rails
   faker
   google-cloud-storage (~> 1.8)
