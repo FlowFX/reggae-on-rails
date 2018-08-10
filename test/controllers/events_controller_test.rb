@@ -49,9 +49,10 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to event_url(Event.last)
+    assert flash[:notice].present?
   end
 
-  test 'event requires title' do
+  test 'event requires title on create' do
     # GIVEN incomplete event parameters
     @event_params[:event][:title] = nil
 
@@ -60,12 +61,19 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Event.count', 0) do
       post events_url, params: @event_params
     end
+    assert assigns(:event).errors.present?
+  end
+
+  test 'event requires title on update' do
+    # GIVEN incomplete event parameters
+    @event_params[:event][:title] = nil
 
     # WHEN updating an event
     # THEN nothing happens
     assert_difference('Event.count', 0) do
       patch event_url(@event), params: @event_params
     end
+    assert assigns(:event).errors.present?
   end
 
   test 'event requires date' do

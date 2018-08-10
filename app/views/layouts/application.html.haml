@@ -13,7 +13,9 @@
   %body
     %main.content
       .wrapper
+        = render partial: 'messages'
         = yield
     %footer.footer
       .wrapper
         = render partial: 'footer', cached: true
+    = debug(params) if Rails.env.development?

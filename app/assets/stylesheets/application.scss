@@ -28,6 +28,19 @@ a {
   @include wrapper();
 }
 
+// Alerts
+// http://getkickstart.com/docs/3.x/ui/alerts/
+.alert {
+  @include alert();
+}
+
+.alert-notice {
+}
+
+.alert-error {
+  background-color: map-get($colors, red);
+}
+
 // Footer
 .container.container-footer {
   @include container();
