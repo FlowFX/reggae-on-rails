@@ -19,6 +19,8 @@ gem 'kickstart_rails', '~> 3'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
+# User authentication
+gem 'devise'
 
 # Use HAML for .haml views
 gem 'haml-rails'
