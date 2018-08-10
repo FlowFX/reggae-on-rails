@@ -24,5 +24,7 @@ module ReggaeOnRails
     # Configure i18n
     config.i18n.available_locales = [:en, 'es-MX']
     config.i18n.default_locale = 'es-MX'
+    # Load locale files in nested directories
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
   end
 end
