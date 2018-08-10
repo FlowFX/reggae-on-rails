@@ -12,7 +12,7 @@ class VisitorTest < ApplicationSystemTestCase
     login_as(@user, scope: :user)
   end
 
-  test 'Jahshua wants to look up all events that ever happened anywhere' do
+  test 'Jahshua wants to create a new event' do
     # Jahshua visits the events index page.
     visit '/events/'
 
@@ -32,8 +32,10 @@ class VisitorTest < ApplicationSystemTestCase
       kill the motherfucker, know what I'm sayin'?"
 
       # After he is finished, he clicks on the submit button,
-      # TODO: Finish the test
-      #find('input#commit')
+      click_on('Guardar')
     end
+
+    # He then gets redirected to the new event.
+    assert page.has_content?('My awesome party')
   end
 end
