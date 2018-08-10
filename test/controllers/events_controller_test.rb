@@ -105,7 +105,6 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     assert flash[:notice].present?
   end
 
-  ### UPDATE ###
   test 'should get edit' do
     sign_in @user
     get edit_event_url(@event)
@@ -125,5 +124,37 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to events_url
+  end
+
+  test 'event requires title on create' do
+    sign_in @user
+    # GIVEN incomplete event parameters
+    @event_params[:event][:title] = nil
+    # WHEN creating a new event
+    # THEN nothing happens
+    assert_difference('Event.count', 0) do
+      post events_url, params: @event_params
+    end
+    assert assigns(:event).errors.present?
+  end
+
+  test 'event requires title on update' do
+    sign_in @user
+    # GIVEN incomplete event parameters
+    @event_params[:event][:title] = nil
+    # WHEN updating an event
+    # THEN nothing happens
+    assert_difference('Event.count', 0) do
+      patch event_url(@event), params: @event_params
+    end
+    assert assigns(:event).errors.present?
+  end
+
+  test 'event requires date on create' do
+    sign_in @user
+    @event_params[:event][:date] = nil
+    assert_difference('Event.count', 0) do
+      post events_url, params: @event_params
+    end
   end
 end
