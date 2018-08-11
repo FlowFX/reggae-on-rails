@@ -1,0 +1,16 @@
+version: 2
+plugins:
+  rubocop:
+    enabled: true
+    channel: rubocop-0-58
+  brakeman:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby
+      - javascript
+exclude_patterns:
+- "**/vendor/**/*"
+- "db/schema.rb"
