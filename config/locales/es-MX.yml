@@ -8,6 +8,8 @@ es-MX:
   destroy: Borrar
   sure?: "¿Estás seguro?"
   new_event: "Nuevo evento"
+  all_events: "Todos eventos"
+  sign_out: "Logout"
   activerecord:
     models:
       event:

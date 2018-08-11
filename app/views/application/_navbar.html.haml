@@ -1,0 +1,12 @@
+.navbar
+  %nav
+    %ul
+      %li
+        = link_to t(:all_events), events_path
+      %li
+        = link_to('+ ' + t(:new_event), new_event_path)
+    %ul
+      %li
+        %small= current_user.email
+      %li
+        = link_to t(:sign_out), destroy_user_session_path, method: :delete
