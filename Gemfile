@@ -86,4 +86,6 @@ group :production do
   # ActiveStorage storage providers
   gem 'aws-sdk-s3', require: false
   gem 'google-cloud-storage', '~> 1.8', require: false
+  # Mailgun for sending email
+  gem 'mailgun-ruby', '~>1.1.6'
 end
