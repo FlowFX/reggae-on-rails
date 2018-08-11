@@ -28,6 +28,11 @@ a {
   @include wrapper();
 }
 
+// Navbar
+.navbar {
+  @include navbar($background-color: map-get($black, lightest));
+}
+
 // Alerts
 // http://getkickstart.com/docs/3.x/ui/alerts/
 .alert {
