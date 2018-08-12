@@ -4,8 +4,8 @@ require 'test_helper'
 
 class CalendarControllerTest < ActionDispatch::IntegrationTest
   setup do
-    create_list(:event, 3, :future)
     create_list(:event, 2, :past)
+    create_list(:event, 3, :future)
   end
 
   test 'should get index' do
@@ -14,18 +14,18 @@ class CalendarControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'events are presented in a calendary thingy' do
-    create(:event, date: Date.new(2018, 12, 14))
-    create(:event, date: Date.new(2018, 12, 14))
-    create(:event, date: Date.new(2018, 12, 15))
-    event = create(:event, date: Date.new(2018, 12, 15))
+    event = Event.last
+
+    year = event.date.year
+    month = event.date.month
     week = event.date.cweek
     day = event.date.cwday
 
     get root_url
     calendar = assigns(:calendar)
 
-    assert calendar[2018][12][week][day][:date].is_a? Date
-    assert calendar[2018][12][week][day][:events].is_a? Array
-    assert calendar[2018][12][week][day][:events].first.is_a? Event
+    assert calendar[year][month][week][day][:date].is_a? Date
+    assert calendar[year][month][week][day][:events].is_a? Array
+    assert calendar[year][month][week][day][:events].first.is_a? Event
   end
 end
