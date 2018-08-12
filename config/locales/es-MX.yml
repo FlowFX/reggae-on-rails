@@ -1,5 +1,8 @@
 es-MX:
   calendar: Calendario
+  date:
+    formats:
+      short: "%a %d/%m"
   save: Guardar
   edit: Editar
   back: Atrás

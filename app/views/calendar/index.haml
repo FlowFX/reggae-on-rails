@@ -1,12 +1,15 @@
 %h1 Reggae CDMX
 
-%table.table.table-blank
-  %tbody
-    - @events.each do |event|
-      - cache event do
-        %tr
-          %td= l(event.date)
-          %td= link_to event.title, event
-          - if user_signed_in?
-            %td= link_to t(:edit), edit_event_path(event)
-            %td= link_to t(:destroy), event, method: :delete, data: { confirm: t(:sure?) }
+- cache @calendar do
+  - @calendar.each do |year, months|
+    %h2=year
+    - months.each do |month, weeks|
+      %h3= Date::MONTHNAMES[month]
+      - weeks.each do |week, days|
+        %table.table.table-blank
+          %tbody
+          - days.each do |day, hash|
+            - hash[:events].each_with_index do |event, index|
+              %tr
+                %td= l(event.date, format: :short) unless index > 0
+                %td= link_to event.title, event
