@@ -60,6 +60,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'awesome_print'
   gem 'brakeman'
   gem 'guard'
   gem 'guard-minitest'
