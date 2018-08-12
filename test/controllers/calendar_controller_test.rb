@@ -27,4 +27,16 @@ class CalendarControllerTest < ActionDispatch::IntegrationTest
     get root_url
     assert assigns(:events).first.date >= Time.zone.today
   end
+
+  test 'events are presented in a calendary thingy' do
+    event = create(:event, date: Date.new(2018, 12, 31))
+    week = event.date.cweek
+    day = event.date.cwday
+
+    get root_url
+    calendar = assigns(:calendar)
+
+    assert calendar[2018][12][week][day].is_a? Array
+    assert calendar[2018][12][week][day].first.is_a? Event
+  end
 end
