@@ -11,5 +11,5 @@
           - days.each do |day, hash|
             - hash[:events].each_with_index do |event, index|
               %tr
-                %td= l(event.date, format: :short) unless index > 0
-                %td= link_to event.title, event
+                %td.date= l(event.date, format: :short) unless index > 0
+                %td.title= link_to event.title, event
