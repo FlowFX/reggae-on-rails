@@ -3,6 +3,7 @@
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
+require 'awesome_print'
 
 require 'minitest/reporters'
 Minitest::Reporters.use!
