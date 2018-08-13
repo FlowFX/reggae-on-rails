@@ -3,8 +3,6 @@
 require 'application_system_test_case'
 
 class VisitorTest < ApplicationSystemTestCase
-  include Warden::Test::Helpers
-
   setup do
     @events = create_list(:event, 3)
 
