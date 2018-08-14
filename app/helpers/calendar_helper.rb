@@ -4,22 +4,29 @@
 module CalendarHelper
   # Create a calendar hash from a collection ov events.
   def make_calendar_from_events(events)
-    calendar = {}
+    # group events by year
+    c = events.group_by { |event| event.date.year }
 
-    events.each do |event|
-      y = event.date.year
-      m = event.date.month
-      w = event.date.cweek
-      d = event.date.cwday
+    c.each_key do |year|
+      # group events by month
+      c[year] =   c[year].group_by { |event| event.date.month }
 
-      calendar[y] = {} unless calendar.key?(y)
-      calendar[y][m] = {} unless calendar[y].key?(m)
-      calendar[y][m][w] = {} unless calendar[y][m].key?(w)
-      calendar[y][m][w][d] = { 'date': event.date, 'events': [] } unless calendar[y][m][w].key?(d)
+      c[year].each_key do |month|
+        # group events by calendar week
+        c[year][month] = c[year][month].group_by { |event| event.date.cweek }
 
-      calendar[y][m][w][d][:events] << event
+        c[year][month].each_key do |week|
+          # group events by week day (1..7)
+          c[year][month][week] = c[year][month][week].group_by { |event| event.date.cwday }
+
+          c[year][month][week].each do |day, events|
+            c[year][month][week][day] = {
+              date: events.first.date,
+              events: events
+            }
+          end
+        end
+      end
     end
-
-    calendar
   end
 end
