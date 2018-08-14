@@ -4,9 +4,9 @@ require 'faker'
 
 FactoryBot.define do
   factory :event do
-    title       Faker::Lorem.sentence
-    date        Date.tomorrow
-    description Faker::Lorem.paragraphs
+    title       { Faker::Lorem.sentence }
+    date        { Date.tomorrow }
+    description { Faker::Lorem.paragraphs }
 
     trait :today do
       date { Time.zone.today }
