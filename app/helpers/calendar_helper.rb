@@ -19,10 +19,10 @@ module CalendarHelper
           # group events by week day (1..7)
           c[year][month][week] = c[year][month][week].group_by { |event| event.date.cwday }
 
-          c[year][month][week].each do |day, events|
+          c[year][month][week].each do |day, event_list|
             c[year][month][week][day] = {
-              date: events.first.date,
-              events: events
+              date: event_list.first.date,
+              events: event_list
             }
           end
         end
