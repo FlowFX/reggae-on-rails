@@ -1,3 +1,8 @@
+AllCops:
+  Exclude:
+    'bin/*'
+    'db/**/*'
+    'config/**/*'
 Metrics/LineLength:
   Max: 120
 Metrics/MethodLength:
