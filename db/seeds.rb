@@ -2,7 +2,7 @@
 
 require 'faker'
 
-events = Event.create(
+Event.create(
   [
     { title: Faker::Lorem.sentence, description: Faker::Lorem.paragraphs, date: Faker::Date.backward(7) },
     { title: Faker::Lorem.sentence, description: Faker::Lorem.paragraphs, date: Faker::Date.forward(1) },
