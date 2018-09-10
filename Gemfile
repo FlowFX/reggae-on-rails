@@ -82,6 +82,8 @@ group :test do
   gem 'simplecov'
   # Upload coverage report to codecov.io
   gem 'codecov'
+  # Ensure clean state during testing
+  gem 'database_cleaner'
 end
 
 group :production do

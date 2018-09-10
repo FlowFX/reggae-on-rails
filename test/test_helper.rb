@@ -5,6 +5,9 @@ require_relative '../config/environment'
 require 'rails/test_help'
 require 'awesome_print'
 
+require 'database_cleaner'
+DatabaseCleaner.strategy = :truncation
+
 require 'minitest/reporters'
 Minitest::Reporters.use!
 
