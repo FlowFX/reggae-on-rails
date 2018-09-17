@@ -17,6 +17,14 @@ if ENV['CI']
   SimpleCov.formatter = SimpleCov::Formatter::Codecov
 end
 
-class ActiveSupport::TestCase
-  include FactoryBot::Syntax::Methods
+module ActiveSupport
+  class TestCase
+    include FactoryBot::Syntax::Methods
+  end
+end
+
+module ActionDispatch
+  class IntegrationTest
+    include Devise::Test::IntegrationHelpers
+  end
 end
