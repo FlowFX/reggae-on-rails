@@ -10,7 +10,7 @@ gem 'rails', '~> 5.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 # Use Sass for stylesheets
 gem 'sass', '~> 3.4'
 # Use Kickstart CSS framework
